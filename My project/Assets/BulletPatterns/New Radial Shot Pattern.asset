@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513b0faaa091f964bab9d9525a639e44, type: 3}
   m_Name: New Radial Shot Pattern
   m_EditorClassIdentifier: Assembly-CSharp::RadialShotPattern
-  Repetitions: 11
-  AngleOffsetBetweenLaps: -24
+  Repetitions: 80
+  AngleOffsetBetweenLaps: 4
   startWait: 0
-  endWait: 1
+  endWait: 5
   PatternSettings:
-  - numberOfBullets: 86
-    bulletSpeed: 4.23
+  - numberOfBullets: 1
+    bulletSpeed: 3.5
     Cooldown: 0.1
     PhaseOffset: 0
     angleOffset: 0

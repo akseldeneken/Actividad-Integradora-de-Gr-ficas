@@ -5,9 +5,22 @@ public class Bullet : MonoBehaviour
     private const float maxLifeSpan = 10f;
     private float lifeSpan = 0f;
     public Vector2 Velocity;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    // Update is called once per frame
+    // Conteo global de balas activas
+    public static int ActiveCount { get; private set; }
+
+    private void OnEnable()
+    {
+        lifeSpan = 0f;
+        ActiveCount++;
+    }
+
+    private void OnDisable()
+    {
+        if (ActiveCount > 0)
+            ActiveCount--;
+    }
+
     void Update()
     {
         transform.position += (Vector3)(Velocity * Time.deltaTime);
@@ -22,6 +35,6 @@ public class Bullet : MonoBehaviour
     void Disable()
     {
         lifeSpan = 0f;
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); // aquí se dispara OnDisable
     }
 }
